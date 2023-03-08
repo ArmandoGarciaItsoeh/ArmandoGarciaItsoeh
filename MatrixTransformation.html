@@ -12,9 +12,13 @@
     <py-config>
       packages = ["numpy", "matplotlib", "pandas"]
     </py-config>
-    <h3>Código Python</h3>
+    <div class="display-6">Importamos las librerías necesarias</div>
+	  
      <div class="mb-3">
-	     <py-repl id="repl-demo" autogenerate = "true"></py-repl>
+	     <py-repl id="repl-demo" autogenerate = "true">
+		     import numpy as np
+		     import matplotlib.pyplot as plt
+	     </py-repl>
     </div>
     <div id="graph-area" class="table"></div>
     <py-script src="compute_pi.py"></py-script>
