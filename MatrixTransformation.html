@@ -9,10 +9,14 @@
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
   </head>
   <body>
+    <py-config>
+      packages = ["numpy", "matplotlib", "pandas"]
+    </py-config>
     <h3>Código Python</h3>
      <div class="mb-3">
 	     <py-repl id="repl-demo" autogenerate = "true"></py-repl>
     </div>
     <div id="graph-area" class="table"></div>
+    
   </body>
 </html>
