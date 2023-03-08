@@ -13,7 +13,9 @@
       packages = ["numpy", "matplotlib", "pandas"]
     </py-config>
     <h1 class="display-6">Transformaciones de matrices</h1>  
-    <p class="h6">Importamos las librerías necesarias</p>	  
+    <p></p>
+	  
+    <h3>Importamos las librerías necesarias</h3>	  
      <div class="mb-3">
 	     <py-repl id="repl-1" autogenerate = "true">
 		     import numpy as np
@@ -21,7 +23,7 @@
 	     </py-repl>
     </div>
 	  
-    <p class="h6">Matriz Original letra "E"</p>	  
+    <h3>Matriz Original letra "E"</h3>	  
     <div class="mb-3">
 	     <py-repl id="repl-2" autogenerate = "true">
 E = np.array([(0,0,1),
@@ -40,6 +42,40 @@ E = np.array([(0,0,1),
 ])
 print("\nMatriz E Original\n")
 print(E)
+	     </py-repl>
+    </div>
+	  
+     <h3>Matriz de Reflexión en eje X</h3>	  
+     <div class="mb-3">
+	     <py-repl id="repl-1" autogenerate = "true">
+
+MRefX = np.array([(-1, 0, 0),
+( 0, 1, 0),
+( 0, 0, 1)
+])
+
+E_Reflejada = E.dot(MRefX)
+
+print("\nMatriz de Reflexión en eje X\n")
+print(MRefX)
+print("\nMatriz E reflejada\n")
+print(E_Reflejada)
+		     
+	     </py-repl>
+    </div>
+
+     <h3>Importamos las librerías necesarias</h3>	  
+     <div class="mb-3">
+	     <py-repl id="repl-1" autogenerate = "true">
+		     fig, ax = plt.subplots()
+plt.plot(E[:,0], E[:,1], label = "Original")
+plt.plot(E_Reflejada[:,0], E_Reflejada[:,1], label = "Reflexión")
+ax.set_aspect('equal')
+ax.set_title('Transformación de matrices', fontsize=18)
+fig.set_size_inches(8, 7)
+plt.legend()
+plt.grid()
+display(plt, target="graph-area", append=True)
 	     </py-repl>
     </div>
 	  
