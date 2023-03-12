@@ -63,20 +63,18 @@
                 y = m*x + b
                 
                 fig, ax = plt.subplots()
-                #ax.set_aspect('equal')
                 ax.scatter(xdata,ydata)
-                ax.plot(x,y)
+                ax.plot(x,y,color='red')
                 display(plt, target="graph-area", append=False)
                 
                 slider = pn.widgets.FloatSlider(start=0, end=10, name='Amplitude')
 
                 def callback(new):
                     m = new
-                    print(m)
                     y = m*x + b
                     ax.clear()
                     ax.scatter(xdata,ydata)
-                    ax.plot(x,y)
+                    ax.plot(x,y,color='red')
                     display(plt, target="graph-area", append=False)
                     return f'Amplitude is: {new}'
 
