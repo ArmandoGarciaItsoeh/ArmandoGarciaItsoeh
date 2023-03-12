@@ -39,7 +39,7 @@
         </nav>
         <section class="pyscript">
             <div id="simple_app"></div>
-
+            <div id="simple_app"></div>
             <py-config>
                 packages = [
                   "https://cdn.holoviz.org/panel/0.14.3/dist/wheels/bokeh-2.4.3-py3-none-any.whl",
@@ -53,10 +53,12 @@
 
             <py-script>
                 import panel as pn
-
+                x = 0.0
                 slider = pn.widgets.FloatSlider(start=0, end=10, name='Amplitude')
 
                 def callback(new):
+                    x = new
+                    print(x)
                     return f'Amplitude is: {new}'
 
                 pn.Row(slider, pn.bind(callback, slider)).servable(target='simple_app');
