@@ -33,7 +33,7 @@
                     <img src="./logo.png" class="logo" />
                 </a>
                 <a class="title" href="" style="color: #f0ab3c"
-                    >Panel Example</a
+                    >Regresion Lineal</a
                 >
             </div>
         </nav>
@@ -47,9 +47,6 @@
                   "matplotlib",
                   "panel==0.14.1"
                 ]
-                plugins = [
-                  "https://pyscript.net/latest/plugins/python/py_tutor.py"
-                ]
             </py-config>
 
             <py-script>
@@ -62,7 +59,9 @@
                 m = 1
                 y = m*x + b
                 
-                plt.plot(x,y)
+                fig, ax = plt.subplots()
+                
+                ax.plot(x,y)
                 display(plt, target="graph-area", append=False)
                 
                 slider = pn.widgets.FloatSlider(start=0, end=10, name='Amplitude')
@@ -71,7 +70,8 @@
                     b = new
                     print(b)
                     y = m*x + b
-                    plt.plot(x,y)
+                    ax.clear()
+                    ax.plot(x,y)
                     display(plt, target="graph-area", append=False)
                     return f'Amplitude is: {new}'
 
