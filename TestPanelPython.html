@@ -55,7 +55,7 @@
                 import matplotlib.pyplot as plt
                 
                 x = np.linspace(-25, 25, 50)
-                b = 2
+                b = 10
                 m = 1
                 y = m*x + b
                 
@@ -67,8 +67,8 @@
                 slider = pn.widgets.FloatSlider(start=0, end=10, name='Amplitude')
 
                 def callback(new):
-                    b = new
-                    print(b)
+                    m = new
+                    print(m)
                     y = m*x + b
                     ax.clear()
                     ax.plot(x,y)
