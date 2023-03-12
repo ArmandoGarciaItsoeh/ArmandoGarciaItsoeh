@@ -68,6 +68,7 @@
                 display(plt, target="graph-area", append=False)
                 
                 slider = pn.widgets.FloatSlider(start=-3, end=3, value=0, name='m')
+                sliderB = pn.widgets.FloatSlider(start=-5, end=5, value=0, name='b')
 
                 def callback(new):
                     m = new
@@ -77,8 +78,18 @@
                     ax.plot(x,y,color='red')
                     display(plt, target="graph-area", append=False)
                     return f'Amplitude is: {new}'
+                
+                def callbackB(new):
+                    b = new
+                    y = m*x + b
+                    ax.clear()
+                    ax.scatter(xdata,ydata)
+                    ax.plot(x,y,color='red')
+                    display(plt, target="graph-area", append=False)
+                    return f'Amplitude is: {new}'
 
                 pn.Row(slider, pn.bind(callback, slider)).servable(target='simple_app');
+                pn.Row(sliderB, pn.bind(callbackB, sliderB)).servable(target='simple_app');
             </py-script>
         </section>
     </body>
