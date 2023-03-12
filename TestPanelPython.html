@@ -60,7 +60,7 @@
                 y = m*x + b
                 
                 fig, ax = plt.subplots()
-                
+                ax.set_aspect('equal')
                 ax.plot(x,y)
                 display(plt, target="graph-area", append=False)
                 
