@@ -86,11 +86,11 @@
                     ax.scatter(xdata,ydata)
                     ax.plot(x,y,color='red')
                     display(plt, target="graph-area", append=False)
-                    return f'y: {m} x + {b}'
+                    return f'y: {pm} x + {b}'
 
                 pn.Row(slider, pn.bind(callback, slider)).servable(target='simple_app');
                 
-                pn.Row(sliderB, pn.bind(callbackB, sliderB, pm=m)).servable(target='simple_app');
+                pn.Row(sliderB, pn.bind(callbackB, new2 = sliderB, pm=m)).servable(target='simple_app');
             </py-script>
         </section>
     </body>
