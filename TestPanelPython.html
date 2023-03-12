@@ -54,13 +54,17 @@
                 import numpy as np
                 import matplotlib.pyplot as plt
                 
-                x = np.linspace(-25, 25, 50)
+                xdata = [2.1,2.7,2.8,3.2,3.2,4.5,4.6,7.2,8.3,8.9,10,11.5,11.7,12.8,13.8,14.6,14.9]
+                ydata = [2.94,4.32,1.12,0.64,1.92,3.6,8.28,1.44,9.96,3.56,20,11.5,11.7,17.92,22.08,23.36,17.88]
+
+                x = np.linspace(x.min(), x.max, 20)
                 b = 10
                 m = 1
                 y = m*x + b
                 
                 fig, ax = plt.subplots()
-                ax.set_aspect('equal')
+                #ax.set_aspect('equal')
+                ax.scatter(xdata,ydata)
                 ax.plot(x,y)
                 display(plt, target="graph-area", append=False)
                 
@@ -71,6 +75,7 @@
                     print(m)
                     y = m*x + b
                     ax.clear()
+                    ax.scatter(xdata,ydata)
                     ax.plot(x,y)
                     display(plt, target="graph-area", append=False)
                     return f'Amplitude is: {new}'
