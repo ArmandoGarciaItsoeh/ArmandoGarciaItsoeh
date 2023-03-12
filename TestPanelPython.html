@@ -39,7 +39,7 @@
         </nav>
         <section class="pyscript">
             <div id="simple_app"></div>
-            <div id="simple_app"></div>
+            <div id="graph-area"></div>
             <py-config>
                 packages = [
                   "https://cdn.holoviz.org/panel/0.14.3/dist/wheels/bokeh-2.4.3-py3-none-any.whl",
@@ -53,12 +53,25 @@
 
             <py-script>
                 import panel as pn
-                x = 0.0
+                import numpy as np
+                import matplotlib.pyplot as plt
+                
+                x = np.linspace(-25, 25, 50)
+                b = 2
+                m = 1
+                y = m*x + b
+                
+                plt.plot(x,y)
+                display(plt, target="graph-area", append=False)
+                
                 slider = pn.widgets.FloatSlider(start=0, end=10, name='Amplitude')
 
                 def callback(new):
-                    x = new
-                    print(x)
+                    b = new
+                    print(b)
+                    y = m*x + b
+                    plt.plot(x,y)
+                    display(plt, target="graph-area", append=False)
                     return f'Amplitude is: {new}'
 
                 pn.Row(slider, pn.bind(callback, slider)).servable(target='simple_app');
