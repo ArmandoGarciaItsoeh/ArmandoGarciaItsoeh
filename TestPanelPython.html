@@ -77,16 +77,16 @@
                     ax.scatter(xdata,ydata)
                     ax.plot(x,y,color='red')
                     display(plt, target="graph-area", append=False)
-                    return f'Amplitude is: {new}'
+                    return f'y: {m} x + {b}'
                 
-                def callbackB(new):
-                    b = new
+                def callbackB(new2):
+                    b = new2
                     y = m*x + b
                     ax.clear()
                     ax.scatter(xdata,ydata)
                     ax.plot(x,y,color='red')
                     display(plt, target="graph-area", append=False)
-                    return f'Amplitude is: {new}'
+                    return f'y: {m} x + {b}'
 
                 pn.Row(slider, pn.bind(callback, slider)).servable(target='simple_app');
                 pn.Row(sliderB, pn.bind(callbackB, sliderB)).servable(target='simple_app');
