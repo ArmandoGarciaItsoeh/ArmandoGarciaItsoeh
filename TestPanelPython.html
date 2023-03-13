@@ -54,6 +54,7 @@
             fig, ax = plt.subplots()
             ax.scatter(xdata,ydata)
             ax.plot(x,y,color='red')
+            plt.grid()
             display(plt, target="graph-area", append=False)
 
             sliderM = pn.widgets.FloatSlider(start=-5, end=5, value=0, name='m')
@@ -65,7 +66,7 @@
                 ax.scatter(xdata,ydata)
                 ax.plot(x,y,color='red')
                 plt.xlim(0, 16)
-                plt.ylim(-5, 23)
+                plt.ylim(-5, 25)
                 display(plt, target="graph-area", append=False)
                 return f'y: {round(m,2)} x + {round(b,2)}'
 
@@ -75,7 +76,7 @@
                 ax.scatter(xdata,ydata)
                 ax.plot(x,y,color='red')
                 plt.xlim(0, 16)
-                plt.ylim(-5, 23)
+                plt.ylim(-5, 25)
                 display(plt, target="graph-area", append=False)
                 return f'y: {round(m,2)} x + {round(b,2)}'
 
