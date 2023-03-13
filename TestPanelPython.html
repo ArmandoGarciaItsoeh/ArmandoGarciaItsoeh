@@ -67,8 +67,14 @@
                 ax.plot(x,y,color='red')
                 display(plt, target="graph-area", append=False)
                 
-                slider = pn.widgets.FloatSlider(start=-3, end=3, name='m')
-                sliderB = pn.widgets.FloatSlider(start=-5, end=20, name='b')
+                #def add(a,b):
+                #    return a+b
+                #widget = pn.widgets.IntSlider(value=1, start=1, end=5)
+                #iadd = pn.bind(add, a=widget, b=1)
+                #pn.Column(widget, iadd)
+                
+                slider = pn.widgets.FloatSlider(start=-5, end=5, value=0 name='m')
+                sliderB = pn.widgets.FloatSlider(start=-5, end=30, value=0 name='b')
 
                 def callback(new):
                     m = new
@@ -79,18 +85,20 @@
                     display(plt, target="graph-area", append=False)
                     return f'y: {m} x + {b}'
                 
-                def callbackB(new2, pm):
-                    b = new2
-                    y = pm*x + b
+                def callbackB(m, b):
+                    y = m*x + b
                     ax.clear()
                     ax.scatter(xdata,ydata)
                     ax.plot(x,y,color='red')
                     display(plt, target="graph-area", append=False)
-                    return f'y: {pm} x + {b}'
+                    return f'y: {pm} x + {b}', b
 
+                
                 pn.Row(slider, pn.bind(callback, slider)).servable(target='simple_app');
                 
-                pn.Row(sliderB, pn.bind(callbackB, new2 = sliderB, pm=m)).servable(target='simple_app');
+                binder = pn.bind(callbackB, m=slider, b=sliderB)
+                
+                pn.Row(sliderB, binder).servable(target='simple_app');
             </py-script>
         </section>
     </body>
