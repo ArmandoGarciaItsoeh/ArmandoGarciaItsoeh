@@ -65,7 +65,7 @@
                 ax.scatter(xdata,ydata)
                 ax.plot(x,y,color='red')
                 display(plt, target="graph-area", append=False)
-                return f'y: {m} x + {b}'
+                return f'y: {round(m,2)} x + {round(b,2)}'
 
             def callbackB(m, b):
                 y = m*x + b
@@ -73,7 +73,7 @@
                 ax.scatter(xdata,ydata)
                 ax.plot(x,y,color='red')
                 display(plt, target="graph-area", append=False)
-                return f'y: {m} x + {b}'
+                return f'y: {round(m,2)} x + {round(b,2)}'
 
             binderM = pn.bind(callbackM, m=sliderM, b=sliderB)
             pn.Row(sliderM, binderM).servable(target='simple_app');
