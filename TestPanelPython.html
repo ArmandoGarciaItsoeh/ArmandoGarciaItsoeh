@@ -73,8 +73,8 @@
                 #iadd = pn.bind(add, a=widget, b=1)
                 #pn.Column(widget, iadd)
                 
-                slider = pn.widgets.FloatSlider(start=-5, end=5, value=0 name='m')
-                sliderB = pn.widgets.FloatSlider(start=-5, end=30, value=0 name='b')
+                slider = pn.widgets.FloatSlider(start=-5, end=5, value=0, name='m')
+                sliderB = pn.widgets.FloatSlider(start=-5, end=30, value=0, name='b')
 
                 def callback(new):
                     m = new
