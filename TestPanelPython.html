@@ -67,17 +67,10 @@
                 ax.plot(x,y,color='red')
                 display(plt, target="graph-area", append=False)
                 
-                #def add(a,b):
-                #    return a+b
-                #widget = pn.widgets.IntSlider(value=1, start=1, end=5)
-                #iadd = pn.bind(add, a=widget, b=1)
-                #pn.Column(widget, iadd)
-                
-                slider = pn.widgets.FloatSlider(start=-5, end=5, value=0, name='m')
+                sliderM = pn.widgets.FloatSlider(start=-5, end=5, value=0, name='m')
                 sliderB = pn.widgets.FloatSlider(start=-5, end=30, value=0, name='b')
 
-                def callback(new):
-                    m = new
+                def callbackM(m, b):
                     y = m*x + b
                     ax.clear()
                     ax.scatter(xdata,ydata)
@@ -93,12 +86,11 @@
                     display(plt, target="graph-area", append=False)
                     return f'y: {m} x + {b}'
 
+                binderM = pn.bind(callbackM, m=sliderM, b=sliderB)
+                pn.Row(sliderM, binderM).servable(target='simple_app');
                 
-                pn.Row(slider, pn.bind(callback, slider)).servable(target='simple_app');
-                
-                binder = pn.bind(callbackB, m=slider, b=sliderB)
-                
-                pn.Row(sliderB, binder).servable(target='simple_app');
+                binderB = pn.bind(callbackB, m=sliderM, b=sliderB)
+                pn.Row(sliderB, binderB).servable(target='simple_app');
             </py-script>
         </section>
     </body>
