@@ -17,7 +17,7 @@ plt.grid()
 display(plt, target="graph-area", append=False)
 
 sliderM = pn.widgets.FloatSlider(start=-5, end=5, value=0, name='m')
-sliderB = pn.widgets.FloatSlider(start=-5, end=25, value=0, name='b')
+sliderB = pn.widgets.FloatSlider(start=-15, end=25, value=0, name='b')
 
 def callbackM(m, b):
     y = m*x + b
