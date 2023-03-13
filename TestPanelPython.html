@@ -91,7 +91,7 @@
                     ax.scatter(xdata,ydata)
                     ax.plot(x,y,color='red')
                     display(plt, target="graph-area", append=False)
-                    return f'y: {pm} x + {b}', b
+                    return f'y: {m} x + {b}'
 
                 
                 pn.Row(slider, pn.bind(callback, slider)).servable(target='simple_app');
