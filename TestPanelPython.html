@@ -52,7 +52,6 @@
             y = m*x + b
 
             fig, ax = plt.subplots()
-            ax.set_aspect('equal')
             ax.scatter(xdata,ydata)
             ax.plot(x,y,color='red')
             display(plt, target="graph-area", append=False)
