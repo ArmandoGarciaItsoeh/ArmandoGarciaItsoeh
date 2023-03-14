@@ -1,5 +1,6 @@
 import panel as pn
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
 xdata = np.array( [2.1,2.7,2.8,3.2,3.2,4.5,4.6,7.2,8.3,8.9,10,11.5,11.7,12.8,13.8,14.6,14.9] )
