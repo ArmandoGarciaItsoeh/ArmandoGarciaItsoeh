@@ -53,4 +53,5 @@ pn.Row(sliderM, binderM).servable(target='simple_app');
 binderB = pn.bind(callbackB, m=sliderM, b=sliderB)
 pn.Row(sliderB, binderB).servable(target='simple_app');
 
-pn.Row(df_pane).servable(target='simple_app');
+dataTable = pn.widgets.Tabulator(df_pane, layout='fit_columns', width=650)
+pn.Row(dataTable).servable(target='simple_app');
