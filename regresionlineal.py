@@ -5,7 +5,8 @@ from matplotlib import pyplot as plt
 from pyodide.http import open_url
       
 from js import document, FileReader
-from pyodide import create_proxy
+#from pyodide import create_proxy
+from pyodide.ffi import create_proxy
 
 df = pd.DataFrame(columns=['X','Y'])
 
