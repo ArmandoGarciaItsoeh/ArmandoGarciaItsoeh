@@ -32,4 +32,4 @@ tpc = ax1.tripcolor(triang, z, shading='flat')
 fig1.colorbar(tpc)
 ax1.set_title('tripcolor of Delaunay triangulation, flat shading')
 
-display(fig1, target="mpl")
+display(fig1, target="graph-area")
