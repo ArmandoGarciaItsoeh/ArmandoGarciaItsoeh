@@ -1,46 +1,34 @@
 <html>
     <head>
-        <title>Panel Example</title>
-        <meta charset="iso-8859-1" />
-        <link rel="icon" type="image/x-icon" href="./favicon.png" />
-        <script
-            type="text/javascript"
-            src="https://cdn.bokeh.org/bokeh/release/bokeh-2.3.0.js"
-        ></script>
-        <script
-            type="text/javascript"
-            src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.0.min.js"
-        ></script>
-        <script
-            type="text/javascript"
-            src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.0.min.js"
-        ></script>
-        <script
-            type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@holoviz/panel@0.12.0/dist/panel.min.js"
-        ></script>
-        <link
-            rel="stylesheet"
-            href="https://pyscript.net/latest/pyscript.css"
-        />
-        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+         <!-- Recommended meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <!-- PyScript CSS -->
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+        <!-- CSS for examples -->
         <link rel="stylesheet" href="./assets/css/examples.css" />
+
+        <!-- This script tag bootstraps PyScript -->
+        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+        <title>Regresion Lineal Interactiva</title>
+        <link rel="icon" type="image/png" href="./assets/favicon.png" />
+
+        <!-- bokeh scripts -->
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.2.2.js"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.2.2.min.js"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.2.2.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+
+        <!-- panel scripts -->
+        <script defer src="https://cdn.jsdelivr.net/npm/@holoviz/panel@1.3.1/dist/panel.min.js"></script>
     </head>
     <body>
         <div id="simple_app"></div>
         <div id="graph-area"></div>
-        <py-config>
-            packages = [
-              "https://cdn.holoviz.org/panel/0.14.3/dist/wheels/bokeh-2.4.3-py3-none-any.whl",
-              "numpy",
-              "pandas",
-              "matplotlib",
-              "panel==0.12.0"
-            ]
-        </py-config>
-
-        <py-script src="interactive_lineal_regresion.py">
-            
+            <script type="py" src="./interactive_lineal_regresion.py" config="./pyscript.toml"></script>
         </py-script>
     </body>
 </html>
