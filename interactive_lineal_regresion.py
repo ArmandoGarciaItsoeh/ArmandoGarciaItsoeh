@@ -9,7 +9,7 @@ xdata = np.array( [2.1,2.7,2.8,3.2,3.2,4.5,4.6,7.2,8.3,8.9,10,11.5,11.7,12.8,13.
 ydata = np.array( [2.94,4.32,1.12,0.64,1.92,3.6,8.28,1.44,9.96,3.56,20,11.5,11.7,17.92,22.08,23.36,17.88] )
 
 data = np.column_stack((xdata, ydata))
-df = pd.DataFrame(data, columns = ['x','y'])
+df = pd.DataFrame(data)
 
 df_pane = pn.pane.DataFrame(df, width=400)
 
